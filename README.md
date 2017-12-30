@@ -28,9 +28,25 @@ This module lets you manage Linux kernel modules.
 
 **Defined types:**
 
+* [kmod::load](#kmodload-defined-type)
+
 ### Classes
 
 ### Defined types
+
+#### kmod::load defined type
+
+This defined type manages the forced loading (and unloading) of kernel modules.  Typically, kernel modules are loaded on demand, but this type can be used for a more forceful, explicit approach.
+
+##### `namevar`
+An arbitrary identifier for the module-load instance unless the `module_name` parameter is not set in which case this must provide the value normally set with the `module_name` parameter.
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+
+##### `module_name`
+The name of the kernel module to be loaded/unloaded.
+
 
 ## Limitations
 
