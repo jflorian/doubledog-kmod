@@ -1,0 +1,19 @@
+{
+    "name": "doubledog-kmod",
+    "version": "0.1.0",
+    "author": "John Florian",
+    "summary": "Linux kernel module management",
+    "license": "GPL-3.0",
+    "source": "https://www.doubledog.org/git/puppet-kmod.git",
+    "project_page": "https://github.com/jflorian/doubledog-kmod",
+    "issues_url": "https://github.com/jflorian/doubledog-kmod/issues",
+    "operatingsystem_support": [{
+        "operatingsystem": "CentOS",
+        "operatingsystemrelease": ["7.0", "7.4.1708"]
+    }, {
+        "operatingsystem": "Fedora",
+        "operatingsystemrelease": ["25", "26", "27"]
+    }],
+    "dependencies": [],
+    "data_provider": "hiera"
+}
