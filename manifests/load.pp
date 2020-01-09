@@ -1,3 +1,4 @@
+#
 # == Define: kmod::load
 #
 # Manage the loading of a kernel module.
@@ -8,7 +9,9 @@
 #
 # === Copyright
 #
-# Copyright 2017 John Florian
+# This file is part of the doubledog-kmod Puppet module.
+# Copyright 2017-2020 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define kmod::load (
@@ -18,16 +21,16 @@ define kmod::load (
 
     case $ensure {
 
-        'present': {
-            exec { "modprobe ${_name}":
-                unless => "lsmod | grep -q '^${_name} '",
-            }
-        }
-
         'absent': {
             exec { "modprobe -r ${_name}":
                 path   => '/bin:/sbin:/usr/bin:/usr/sbin',
                 onlyif => "egrep -q '^${_name} ' /proc/modules",
+            }
+        }
+
+        'present', default: {
+            exec { "modprobe ${_name}":
+                unless => "lsmod | grep -q '^${_name} '",
             }
         }
 
