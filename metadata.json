@@ -1,28 +1,39 @@
 {
-    "author": "John Florian",
-    "dependencies": [],
-    "issues_url": "https://github.com/jflorian/doubledog-kmod/issues",
-    "license": "GPL-3.0",
-    "name": "doubledog-kmod",
-    "operatingsystem_support": [
-        {
-            "operatingsystem": "CentOS",
-            "operatingsystemmajrelease": [
-                "7",
-                "8"
-            ]
-        },
-        {
-            "operatingsystem": "Fedora",
-            "operatingsystemrelease": [
-                "29",
-                "30",
-                "31"
-            ]
-        }
-    ],
-    "project_page": "https://github.com/jflorian/doubledog-kmod",
-    "source": "https://www.doubledog.org/git/puppet-kmod.git",
-    "summary": "Linux kernel module management",
-    "version": "0.2.0"
+  "name": "doubledog-kmod",
+  "version": "0.2.0",
+  "author": "John Florian",
+  "summary": "Linux kernel module management",
+  "license": "GPL-3.0",
+  "source": "https://www.doubledog.org/git/puppet-kmod.git",
+  "project_page": "https://github.com/jflorian/doubledog-kmod",
+  "issues_url": "https://github.com/jflorian/doubledog-kmod/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemmajrelease": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Fedora",
+      "operatingsystemrelease": [
+        "29",
+        "30",
+        "31"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.17.0",
+  "template-url": "pdk-default#1.17.0",
+  "template-ref": "tags/1.17.0-0-gd3a4319"
 }
