@@ -13,6 +13,16 @@ describe 'kmod::load' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile }
+      it do
+        is_expected.to contain_file('/etc/modules-load.d/namevar.conf').with(
+          'ensure' => 'present',
+          'owner'  => 'root',
+          'group'  => 'root',
+          'mode'   => '0644',
+        )
+        is_expected.to contain_file('/etc/modules-load.d/namevar.conf')
+          .with_content(%r{^namevar$})
+      end
     end
   end
 end
