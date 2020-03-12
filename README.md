@@ -1,3 +1,9 @@
+<!--
+This file is part of the doubledog-kmod Puppet module.
+Copyright 2017-2020 John Florian <jflorian@doubledog.org>
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # kmod
 
 #### Table of Contents
@@ -26,11 +32,22 @@ This module lets you manage Linux kernel modules.
 
 **Classes:**
 
+* [kmod](#kmod-class)
+
 **Defined types:**
 
 * [kmod::load](#kmodload-defined-type)
 
+
 ### Classes
+
+#### kmod class
+
+This class is the intended way to manage Linux kernel modules using this Puppet module.
+
+##### `repos`
+A hash whose keys are Puppet resource names and whose values are hashes comprising the same parameters you would otherwise pass to the [kmod::load](#kmodload-defined-type) defined type.  The default is none.
+
 
 ### Defined types
 

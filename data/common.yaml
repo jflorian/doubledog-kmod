@@ -1,11 +1,7 @@
 # This file is part of the doubledog-kmod Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2020 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
 
-#kmod::enable:                   true
-#kmod::ensure:                   running
-#kmod::packages:
-#    - kmod
-#kmod::service:                  kmod
+kmod::modules:                  {}
