@@ -64,6 +64,9 @@ Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean val
 ##### `module_name`
 The name of the kernel module to be loaded/unloaded.
 
+##### `path`
+The executable search path, as a colon delimited string, to be used in locating tools like `modprobe`, `lsmod` and `grep`.  The default should be correct for supported platforms.
+
 
 ## Limitations
 

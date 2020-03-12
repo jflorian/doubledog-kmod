@@ -15,21 +15,24 @@
 
 
 define kmod::load (
-        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
-        String[1] $_name=$title,
+        Variant[Boolean, Enum['present', 'absent']]
+                                $ensure='present',
+        String[1]               $path='/bin:/sbin:/usr/bin:/usr/sbin',
+        String[1]               $_name=$title,
     ) {
 
     case $ensure {
 
         'absent': {
             exec { "modprobe -r ${_name}":
-                path   => '/bin:/sbin:/usr/bin:/usr/sbin',
+                path   => $path,
                 onlyif => "egrep -q '^${_name} ' /proc/modules",
             }
         }
 
         'present', default: {
             exec { "modprobe ${_name}":
+                path   => $path,
                 unless => "lsmod | grep -q '^${_name} '",
             }
         }
